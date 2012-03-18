@@ -1,0 +1,3 @@
+syntax:glob
+stacking.o
+stacking_test.o
