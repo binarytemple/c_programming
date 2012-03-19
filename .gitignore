@@ -41,3 +41,9 @@ cmysql/read_file_to_char_array
 cmysql/sizeof_experiments
 credis/redis_test
 cjson/reformat_test
+
+cbasic/atexit__exit_test
+cbasic/atexit_exit_test
+cjson/cbasiclinked_list_test
+cjson/stacking_test
+cjson/linked_list_test

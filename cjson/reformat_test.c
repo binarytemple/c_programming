@@ -66,7 +66,7 @@ static int reformat_string(void * ctx, const unsigned char * stringVal,
 
     yajl_gen g = (yajl_gen) ctx;
 
-    yajl_gen_string(g, strcat(stringVal ,"dork") , stringLen);
+//    yajl_gen_string(g, strcat(stringVal ,"dork") , stringLen);
     return 1;
 }
 

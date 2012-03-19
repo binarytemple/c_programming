@@ -8,9 +8,7 @@
 #include<stdio.h>
 #include "stacking.h"
 
-int
-main(int argc, char ** argv)
-{
+int main(int argc, char ** argv) {
 	Stack S;
 
 	init(&S);
@@ -19,6 +17,10 @@ main(int argc, char ** argv)
 
 	push(&S, 2.31);
 	push(&S, 1.19);
+
+	for (int i = 0; i < 1000; i++) {
+		push(&S, i);
+	}
 
 	MyStackPrint(&S);
 
