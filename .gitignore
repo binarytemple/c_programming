@@ -47,3 +47,5 @@ cbasic/atexit_exit_test
 cjson/cbasiclinked_list_test
 cjson/stacking_test
 cjson/linked_list_test
+
+cbasic/memcpy_malloc_free_test

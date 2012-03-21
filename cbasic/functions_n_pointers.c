@@ -8,7 +8,9 @@ char * greeting() {
 }
 void init_greeting(char ** pointer) {
 	char * news = "strength of ten!";
-	* pointer = news;
+	char * tmp = malloc(strlen(*pointer));
+	char * res = strcpy(tmp, *pointer);
+	(*pointer) = news;
 }
 
 int main(int argc, char **argv) {
