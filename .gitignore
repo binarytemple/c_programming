@@ -41,6 +41,7 @@ cbasic/statics_testing
 cbasic/structures
 cbasic/swapnum
 cbasic/time_test
+cbasic/process_control
 cmysql/gtk_displaying_image_from_char_array
 cmysql/gtk_displaying_image_from_file
 cmysql/gtk_displaying_mysql_loaded_image
@@ -61,3 +62,6 @@ cjson/cbasiclinked_list_test
 cjson/stacking_test
 cjson/linked_list_test
 cbasic/memcpy_malloc_free_test
+i8n/umlaut
+i8n/using_lconv_setting_locale
+i8n/setlocale_example
