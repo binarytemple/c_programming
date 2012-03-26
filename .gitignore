@@ -65,3 +65,7 @@ cbasic/memcpy_malloc_free_test
 i8n/umlaut
 i8n/using_lconv_setting_locale
 i8n/setlocale_example
+cpp/hello_world
+cpp/cost_of_miles
+cpp/gcd
+
