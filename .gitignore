@@ -2,7 +2,6 @@ syntax:glob
 *.o
 *.so
 *.class
-.*.swp
 swig/pl/area.pm
 swig/py/area.py
 swig/pl/area_wrap.c
