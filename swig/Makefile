@@ -3,14 +3,14 @@ ARGS=-lpthread -lhiredis -I/usr/include/yajl -lyajl
 LIBARGS=-fPIC 
 PERL_OPTS=`perl -MExtUtils::Embed -e ccopts -e ldopts -e iopts | tr "\n" " "`
 PYTHON_OPTS=`pkg-config --libs --cflags python`
-JAVA_OPTS=-I/usr/lib/jvm/java-6-openjdk/include -I/usr/lib/jvm/java-6-openjdk/include/linux
+JAVA_OPTS=-I/usr/lib/jvm/java-6-openjdk-i386/include -I/usr/lib/jvm/java-6-openjdk-i386/include/linux
 
 rebuild: clean all
 
 bindings: area.so py/_area.so pl/area.so java/libs/libarea.so 
 java_examples: area.class areaJNI.class JavaTest.class PrintLibraryPath.class
 
-all: area.so
+all: area.so bindings java_examples
 
 area.o: area.c
 	$(CC) -c -fPIC area.c -o area.o

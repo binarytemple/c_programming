@@ -12,4 +12,3 @@ java PrintLibraryPath
 java JavaTest
 
 # cursor: 2 del
-
