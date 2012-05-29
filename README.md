@@ -1,7 +1,7 @@
 # This is my README
 
 --------------------
-* Required libraries
+Required libraries
 --------------------
 
 sudo apt-get install uuid-dev
