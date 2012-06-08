@@ -68,4 +68,5 @@ i8n/setlocale_example
 cpp/hello_world
 cpp/cost_of_miles
 cpp/gcd
-
+constant_pointers
+.*.swp
