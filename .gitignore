@@ -1,4 +1,3 @@
-
 *.class
 *.o
 *.pyc
@@ -72,3 +71,5 @@ swig/py/area_wrap.c
 swig/py/area_wraparea.py
 swp
 cbasic/pthread_mutex_example
+cbasic/args_n_env
+cbasic/args_parsing
