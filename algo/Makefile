@@ -1,4 +1,4 @@
-CC = gcc -ggdb 
+CC = c99 -ggdb
 #List all 'c' files by wildcard.
 SOURCES=$(wildcard *.c)
 #Get the 'exe' equivalent of said file
