@@ -74,3 +74,5 @@ cbasic/pthread_mutex_example
 cbasic/args_n_env
 cbasic/args_parsing
 algo/bintree
+algo/structs
+core.*

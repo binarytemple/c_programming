@@ -13,4 +13,9 @@ $(EXECUTABLES): % : %.c
 clean:
 	find ./ -type f -executable -delete 
 
-rebuild: clean all
+.PHONY cores:
+cores:
+	find ./ -type f -name "core.*" -delete
+
+
+rebuild: cores clean all

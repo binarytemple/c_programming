@@ -1,6 +1,11 @@
 #include<stdlib.h>
 #include<stdio.h>
 
+void fail(char * msg, int line) {
+	printf(msg);
+	exit(1);
+}
+
 typedef struct {
 	int house_number;
 	char * street;
@@ -23,45 +28,47 @@ struct bin_tree_s {
 
 typedef struct bin_tree_s bin_tree;
 
-//&(insertible){ .id = X, .data =   &(mail_address){.house_number = H,->street = S, ->town=T, ->postcode =P 	 }}
-
 #define mk_ins(X, H,S,T,P) &(insertible){.id = X, .data =     &(mail_address ) { .house_number = H, .street = \
 			((char*) S), .town = ((char*) T), .postcode = \
 			((char*) P) } }
 
-//#define MK_ADDRESS() &(mail_address){	.house_number=H ,	.street = ((char*)S) ,	.town = ((char*)T)   ,	.postcode = ((char*)P)}
-
-//		 .house_number = H,
-//		 -> street =S;
-//		 	town -> T
-//		 	postcode -> P
 void insert(bin_tree ** tree, insertible * val) {
 	int target = val->id;
 	printf("target val %d\n", target);
 	printf("data address %d\n", val->data);
 
 	bin_tree *temp = NULL;
-	if (!tree) {
+
+	if (!(*tree)) {
 		temp = malloc(sizeof(bin_tree));
-		temp->left = temp->right = NULL;
-		temp->id = &target;
-		tree = &(*temp);
+		temp->left , temp->right = NULL;
+		temp->id = target;
+		temp->data = val->data;
+		*tree = temp;
 		return;
 	}
 
 	if (target < (*tree)->id) {
-		insert(&(*tree)->left, val);
+		bin_tree * left = (*tree)->left;
+
+		insert(  &left  , val);
 	} else if (target > (*tree)->id) {
-		insert(&(*tree)->right, val);
+		bin_tree * right = (*tree)->right;
+		insert( &right, val);
 	}
+	else {
+		fail("unexpected condition",__LINE__);
+	}
+
 
 }
 
-void print_preorder(bin_tree * tree) {
+void print_preorder(bin_tree ** tree) {
 	if (tree) {
-		printf("%d\n", tree->id);
-		print_preorder(tree->left);
-		print_preorder(tree->right);
+
+		printf("%d\n", (*tree)->id);
+		print_preorder((&(*tree)->left));
+		print_preorder((&(*tree)->right));
 	}
 
 }
@@ -74,13 +81,13 @@ void print_preorder(bin_tree * tree) {
 //	}
 //}
 
-void print_postorder(bin_tree * tree) {
-	if (tree) {
-		print_postorder(tree->left);
-		print_postorder(tree->right);
-		printf("%d\n", tree->id);
-	}
-}
+//void print_postorder(bin_tree ** tree) {
+//	if (tree) {
+//		print_postorder(tree->left);
+//		print_postorder(tree->right);
+//		printf("%d\n", tree->id);
+//	}
+//}
 
 //void deltree(bin_tree * tree) {
 //	if (tree) {
@@ -90,10 +97,7 @@ void print_postorder(bin_tree * tree) {
 //	}
 //}
 //
-//void fail(char * msg) {
-//	printf(msg);
-//	exit(1);
-//}
+
 //
 //bin_tree* search(bin_tree ** tree, insertible * val) {
 //	int target = val->id;
@@ -130,54 +134,27 @@ void print_postorder(bin_tree * tree) {
  *
  */
 void main() {
-	bin_tree **root;
+	bin_tree *root;
 	bin_tree ** tmp;
 
 	root = NULL;
-//
-//	mail_address d = { 10, "s", "t", "p" }; //= mk_address(10,"s","t","t");
-//
-//	mail_address mad = (mail_address ) { .house_number = 10, .street =
-//					((char*) "street"), .town = ((char*) "town"), .postcode =
-//					((char*) "postcode") };
-	/* Insert bin_trees into tree */
-//	insert(&root, mk_ins(9,&mad ));
-	//insert(&root, mk_ins(4, 1,"billybegs street","dunmore","D13P45");
 
-//	insertible * i;
-//	//i = &(insertible){.id = 4, .data =  (mail_address){.house_number = 1,->street = "billybegs street", ->town="dunmore", ->postcode ="D13P45" 	 }};
-//	//i = &(insertible){.id = 4, .data =  &mad};
-//	i = &(insertible ) { .id = 4, .data =
-//					&(mail_address ) { .house_number = 10, .street =
-//									((char*) "street"),
-//									.town = ((char*) "town"), .postcode =
-//											((char*) "postcode") } };
+	insert(&root, mk_ins(4,4,"street","town","postcode"));
+	insert(&root, mk_ins(15,15,"street","town","postcode"));
+	insert(&root, mk_ins(6,6,"street","town","postcode"));
+	insert(&root, mk_ins(12,12,"street","town","postcode"));
+	insert(&root, mk_ins(17,17,"street","town","postcode"));
+	insert(&root, mk_ins(2,2,"street","town","postcode"));
 
-	insert(root, mk_ins(4,4,"street","town","postcode"));
-	insert(root, mk_ins(15,15,"street","town","postcode"));
-	insert(root, mk_ins(6,6,"street","town","postcode"));
-	insert(root, mk_ins(12,12,"street","town","postcode"));
-	insert(root, mk_ins(17,17,"street","town","postcode"));
-	insert(root, mk_ins(2,2,"street","town","postcode"));
-//
-//
-//
-//
-//	));
-//			insert(&root, mk_ins(6,NULL));
-//			insert(&root, mk_ins(12,NULL));
-//			insert(&root, mk_ins(17,NULL));
-//			insert(&root, mk_ins(2,NULL));
-//
-//	/* Printing nodes of tree */
-//	printf("Pre Order Display\n");
-//	print_preorder(root);
-//
+	/* Printing nodes of tree */
+	printf("Pre Order Display\n");
+	print_preorder(&root);
+
 //	printf("In Order Display\n");
 //	print_inorder(root);
 //
-	printf("Post Order Display\n");
-	print_postorder(root);
+//	printf("Post Order Display\n");
+//	print_postorder(root);
 //
 //	/* Search nodes into tree */
 //	tmp = search(&root, 4);
