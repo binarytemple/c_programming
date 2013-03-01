@@ -23,6 +23,9 @@ static void print_elements(xmlNode *);
     static void
 print_elements(xmlNode *node)
 {
+
+    fprintf(stderr, "  print_elements() \n");
+
     xmlNode *n;
     xmlAttrPtr a;
     xmlChar *v, *p, *q;
@@ -64,11 +67,15 @@ main(int argc, char **argv)
             return EXIT_FAILURE;
         }
 
-    if ((doc = xmlReadFile(argv[1], NULL, 0)) == NULL)
+    if ((doc = xmlReadFile(argv[1], NULL, 0)) == NULL) {
+        fprintf(stderr, "  xmlReadFile() \n");
         return EXIT_FAILURE;
+    }
 
-    if ((root = xmlDocGetRootElement(doc)) == NULL)
+    if ((root = xmlDocGetRootElement(doc)) == NULL) {
+        fprintf(stderr, "  xmlDocGetRootElement() \n");
         return EXIT_FAILURE;
+    }
 
     print_elements(root);
 
