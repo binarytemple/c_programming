@@ -77,3 +77,7 @@ algo/bintree
 algo/structs
 core.*
 cpp/const_dest
+macros/conditional
+macros/macro
+*.i
+*.s

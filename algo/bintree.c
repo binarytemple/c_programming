@@ -23,7 +23,7 @@ struct bin_tree_s {
 	int id;
 	mail_address * data;
 	struct bin_tree_s * right;
-	struct bin_tree_s *left;
+	struct bin_tree_s * left;
 };
 
 typedef struct bin_tree_s bin_tree;
@@ -37,11 +37,10 @@ void insert(bin_tree ** tree, insertible * val) {
 	printf("target val %d\n", target);
 	printf("data address %d\n", val->data);
 
-	bin_tree *temp = NULL;
-
 	if (!(*tree)) {
+		bin_tree *temp = NULL;
 		temp = malloc(sizeof(bin_tree));
-		temp->left , temp->right = NULL;
+		temp->left, temp->right = NULL;
 		temp->id = target;
 		temp->data = val->data;
 		*tree = temp;
@@ -50,16 +49,13 @@ void insert(bin_tree ** tree, insertible * val) {
 
 	if (target < (*tree)->id) {
 		bin_tree * left = (*tree)->left;
-
-		insert(  &left  , val);
+		insert(&(left), val);
 	} else if (target > (*tree)->id) {
 		bin_tree * right = (*tree)->right;
-		insert( &right, val);
+		insert(&(right), val);
+	} else {
+		fail("unexpected condition", __LINE__);
 	}
-	else {
-		fail("unexpected condition",__LINE__);
-	}
-
 
 }
 
@@ -134,17 +130,17 @@ void print_preorder(bin_tree ** tree) {
  *
  */
 void main() {
-	bin_tree *root;
+	bin_tree ** root;
 	bin_tree ** tmp;
 
 	root = NULL;
 
-	insert(&root, mk_ins(4,4,"street","town","postcode"));
-	insert(&root, mk_ins(15,15,"street","town","postcode"));
-	insert(&root, mk_ins(6,6,"street","town","postcode"));
-	insert(&root, mk_ins(12,12,"street","town","postcode"));
-	insert(&root, mk_ins(17,17,"street","town","postcode"));
-	insert(&root, mk_ins(2,2,"street","town","postcode"));
+	insert(root, mk_ins(4,4,"street","town","postcode"));
+	insert(root, mk_ins(15,15,"street","town","postcode"));
+	insert(root, mk_ins(6,6,"street","town","postcode"));
+	insert(root, mk_ins(12,12,"street","town","postcode"));
+	insert(root, mk_ins(17,17,"street","town","postcode"));
+	insert(root, mk_ins(2,2,"street","town","postcode"));
 
 	/* Printing nodes of tree */
 	printf("Pre Order Display\n");
