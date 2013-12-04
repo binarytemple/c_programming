@@ -3,7 +3,7 @@ ARGS=-lpthread -lhiredis -I/usr/include/yajl -lyajl
 LIBARGS=-fPIC 
 PERL_OPTS=`perl -MExtUtils::Embed -e ccopts -e ldopts -e iopts | tr "\n" " "`
 PYTHON_OPTS=`pkg-config --libs --cflags python`
-JAVA_OPTS=-I/usr/lib/jvm/java-6-openjdk-i386/include -I/usr/lib/jvm/java-6-openjdk-i386/include/linux
+JAVA_OPTS=-I'$(JAVA_HOME)'/include -I'$(JAVA_HOME)'/include/linux
 
 rebuild: clean all
 
