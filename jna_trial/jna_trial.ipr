@@ -29,6 +29,10 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+  <component name="HighlightingAdvisor">
+    <option name="SUGGEST_TYPE_AWARE_HIGHLIGHTING" value="false" />
+    <option name="TYPE_AWARE_HIGHLIGHTING_ENABLED" value="true" />
+  </component>
   <component name="IdProvider" IDEtalkID="0BED74BBBC8965398D92D7FECBEFFBB0" />
   <component name="InspectionProjectProfileManager">
     <profiles>
@@ -169,14 +173,15 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/jna_trial.iml" filepath="$PROJECT_DIR$/jna_trial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/j/j.iml" filepath="$PROJECT_DIR$/j/j.iml" />
+      <module fileurl="file://$PROJECT_DIR$/s/s.iml" filepath="$PROJECT_DIR$/s/s.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="Unnamed" type="Application" factoryName="Application" singleton="true">
+    <configuration default="false" name="CLibraryMain(Java)" type="Application" factoryName="Application" singleton="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="CLibraryMain" />
       <option name="VM_PARAMETERS" value="" />
@@ -187,7 +192,7 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="jna_trial" />
+      <module name="j" />
       <envs>
         <env name="DYLD_LIBRARY_PATH" value="$PROJECT_DIR$" />
       </envs>
@@ -210,6 +215,32 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/jna-4.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="org.scala-lang:scala-compiler:2.10.3" type="repository">
+      <properties maven-id="org.scala-lang:scala-compiler:2.10.3" />
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/scala-compiler-2.10.3.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/scala-library-2.10.3.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/scala-reflect-2.10.3.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/lib/scala-compiler-2.10.3-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/scala-compiler-2.10.3-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="org.scala-lang:scala-library:2.10.3" type="repository">
+      <properties maven-id="org.scala-lang:scala-library:2.10.3" />
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/scala-library-2.10.3.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/lib/scala-library-2.10.3-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/scala-library-2.10.3-sources.jar!/" />
       </SOURCES>
     </library>
   </component>
