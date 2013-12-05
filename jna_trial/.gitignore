@@ -6,3 +6,4 @@ jna_trial.iws
 lib/*
 out/
 testlib.*
+*.dylib

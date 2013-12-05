@@ -17,7 +17,9 @@ public class CLibraryMain {
         ex20holders[2].uniontype = CLibrary.Example20UnionType.STRING;
         ex20holders[2].unionval.setType(String.class);
         ex20holders[2].unionval.stringval = "hello";
-        //ex20holders.write();
-        //clib.example20_send(ex20listref);
+
+        ex20listref.vals.write();
+
+        clib.example20_send(ex20listref);
     }
 }
