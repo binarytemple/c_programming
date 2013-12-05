@@ -4,3 +4,4 @@ lib/*
 out/
 testlib.*
 *.dylib
+hs_err_*.log
