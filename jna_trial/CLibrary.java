@@ -1,4 +1,9 @@
+import com.sun.jna.Library;
+import com.sun.jna.Structure;
+import com.sun.jna.Union;
 
+import java.util.Arrays;
+import java.util.List;
 
 public interface CLibrary extends Library {
  
@@ -17,14 +22,24 @@ public interface CLibrary extends Library {
         }
 
         public static class Example20UnionHolder extends Structure {
-                public static class ByReference extends Example20UnionHolder implements Structure.ByReference {}
+            @Override
+            protected List getFieldOrder() {
+                return Arrays.asList("uniontype","unionval");
+            }
+
+            public static class ByReference extends Example20UnionHolder implements Structure.ByReference {}
 
                 public int uniontype;
                 public Example20Union unionval;
         }
 
         public static class Example20UnionList extends Structure {
-                public static class ByReference extends Example20UnionList implements Structure.ByReference {}
+            @Override
+            protected List getFieldOrder() {
+                return Arrays.asList("numVals","vals");
+            }
+
+            public static class ByReference extends Example20UnionList implements Structure.ByReference {}
                 public int numVals;
                 public Example20UnionHolder.ByReference vals;
         }

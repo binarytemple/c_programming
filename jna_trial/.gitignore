@@ -1,0 +1,8 @@
+*.out
+*.out.*/
+jna_trial.iml
+jna_trial.ipr
+jna_trial.iws
+lib/*
+out/
+testlib.*
