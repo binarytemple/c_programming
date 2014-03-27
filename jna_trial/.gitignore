@@ -1,0 +1,7 @@
+*.out
+*.out.*/
+lib/*
+out/
+testlib.*
+*.dylib
+hs_err_*.log
